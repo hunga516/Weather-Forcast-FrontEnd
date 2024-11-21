@@ -1,27 +1,57 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@shadcn-ui/react/components/**/*.{js,ts,jsx,tsx}", // Đường dẫn tới các thành phần của ShadCN
   ],
+  darkMode: ["class"],
   theme: {
     extend: {
-      height: {
-        'default-layout-header': '60px',
+      fontFamily: {
+        sans: ["Inter", ...fontFamily.sans],
       },
-      width: {
-        'default-layout-width': '1150px'
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
-      padding: {
-        '4': '1rem', // 16px
-        // Các giá trị khác
+      borderRadius: {
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 2px)`,
+        sm: "calc(var(--radius) - 4px)",
       },
-      backgroundColor: {
-        "primary": "#fe2c55",
-        "bluePrimary:": "#007FFF"
-      },
-      textColor: {
-        "bluePrimary": "#007FFF"
-      }
     },
   },
   plugins: [],
-}
+};

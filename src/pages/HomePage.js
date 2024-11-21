@@ -11,7 +11,7 @@ function HomePage() {
     useEffect(() => {
         const getPredict = async () => {
             try {
-                const response = await axios.get("http://127.0.0.1:8000/predict")
+                const response = await axios.get("http://127.0.0.1:5000/predict")
                 setPredict(response.data.predictions)
             } catch (error) {
                 console.log(error);
