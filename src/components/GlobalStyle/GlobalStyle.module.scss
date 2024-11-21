@@ -25,6 +25,32 @@ body .tippy-box {
     background-color: #ff0000;
 }
 
+html {}
+
+::-webkit-scrollbar {
+    width: 5px !important;
+    height: 8px;
+    /* Độ rộng scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+    /* Màu nền track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7a7a7a !important;
+    /* Màu thanh cuộn */
+    border-radius: 10px !important;
+    /* Bo tròn góc */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555 !important;
+    /* Màu khi hover */
+}
+
+
 //Font
 @font-face {
     font-family: 'TiktokFront';

@@ -63,7 +63,7 @@ function Sidebar() {
 
     return (
         <div className="sidebar-wrapper text-white fixed w-[232px]">
-            <div className="nav overflow-y-auto max-h-[100vh] flex flex-col gap- px-2 text-[19px] py-[10px] font-sans font-semibold tracking-wide border-b-[1px] border-[#1618231F]">
+            <div className="nav overflow-y-auto max-h-[100vh]  flex flex-col gap- px-2 text-[19px] py-[10px] font-sans font-semibold tracking-wide border-b-[1px] border-[#1618231F]">
                 <div className="flex justify-between px-2">
                     <h1 className="text-slate-300 text-xs font-semibold">Vị trí</h1>
                     <button style={{ "border-radius": "2px" }} onClick={toggleIsShowAddLocation} className="p-1 rounded-md ring-1 ring-blue-300">
