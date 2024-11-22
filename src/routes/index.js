@@ -11,5 +11,5 @@ export const publicRoute = [
     { path: '/sign-in', element: PopupLogin, layout: NoneLayout },
     { path: '/following', element: FollowingPage },
     { path: '/account', element: AccountPage },
-    { path: '/:id', element: ProfilePage, layout: DefautLayout },
+    { path: '/:id', element: HomePage, layout: DefautLayout },
 ]

@@ -4,9 +4,13 @@ import { useEffect, useState } from "react";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoMdUmbrella } from "react-icons/io";
 import Skeleton from "react-loading-skeleton";
+import { useParams } from "react-router-dom";
 
 function HomePage() {
     const [predict, setPredict] = useState()
+    const params = useParams()
+
+    console.log(params.id);
 
     useEffect(() => {
         const getPredict = async () => {
@@ -18,8 +22,29 @@ function HomePage() {
             }
         }
 
-        getPredict()
-    }, [])
+        const getPredictByLocation = async () => {
+            const data = {
+                "dwpt": 26.5,
+                "rhum": 95.0,
+                "wspd": 7.6,
+                "pres": 1010.5
+            }
+            try {
+                const response = await axios.post(`http://127.0.0.1:5000/predict_district/${params.id}`, data)
+                setPredict(response.data.predictions)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        if (params?.id) {
+            getPredictByLocation()
+        } else {
+            getPredict()
+        }
+
+    }, [params])
+
 
     const formatHour = (time) => {
         const date = new Date(time);
